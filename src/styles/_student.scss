@@ -8,6 +8,7 @@
   border: 1px solid;
   padding: 1.25rem;
   flex-basis: calc(25% - 1.25rem);
+  max-width: 25%;
   margin-bottom: 1.25rem;
   position: relative;
   h3 {
@@ -15,6 +16,12 @@
   }
 
   .show {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+  }
+
+  .edit {
     position: absolute;
     top: 1.25rem;
     right: 1.25rem;
@@ -36,6 +43,14 @@
       &:focus {
         color: grey;
       }
+    }
+  }
+}
+
+.show {
+  .student {
+    .show {
+      display: none;
     }
   }
 }

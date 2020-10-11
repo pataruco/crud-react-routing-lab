@@ -19,7 +19,7 @@ const ShowStudent = () => {
   const { location, name, githubUsername, _id } = student;
 
   return (
-    <main className="page student show">
+    <main className="page show">
       <Student
         githubUsername={githubUsername}
         id={_id}

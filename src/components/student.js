@@ -10,6 +10,9 @@ const Student = ({ location, name, githubUsername, id }) => {
       <Link to={`/students/${id}`} key={id} className="show">
         show
       </Link>
+      <Link to={`/students/${id}/edit`} key={id} className="edit">
+        edit
+      </Link>
       <dl>
         <dt>Location:</dt>
         <dd>{location}</dd>
