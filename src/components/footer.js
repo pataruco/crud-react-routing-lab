@@ -3,7 +3,9 @@ import React from 'react';
 const Footer = () => {
   return (
     <footer>
-      <p>Made with love by SEI-ES</p>
+      <p>
+        Made with love <span>❤️</span> by SEI-ES
+      </p>
     </footer>
   );
 };
