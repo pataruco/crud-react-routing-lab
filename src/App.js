@@ -8,6 +8,7 @@ import Home from './pages/home';
 import Error from './pages/error';
 import ListStudents from './pages/student/list';
 import ShowStudent from './pages/student/show';
+import NewStudent from './pages/student/new';
 
 function App() {
   return (
@@ -16,6 +17,8 @@ function App() {
         <Header />
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route path="/students/:id/edit" component={ShowStudent} />
+          <Route path="/students/new" component={NewStudent} />
           <Route path="/students/:id" component={ShowStudent} />
           <Route path="/students" component={ListStudents} />
           <Route path="/*" component={Error} />
