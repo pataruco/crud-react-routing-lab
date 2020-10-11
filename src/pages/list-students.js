@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { getAllStudents } from '../lib/api';
+import Student from '../components/student';
 
 const ListStudents = () => {
   const [students, setStudents] = useState([]);
@@ -16,13 +17,21 @@ const ListStudents = () => {
   return (
     <main className="page all-students">
       <h2>List of students</h2>
-      {students.map((student) => {
-        return (
-          <article>
-            <h3>{student.name}</h3>
-          </article>
-        );
-      })}
+      <div className="students">
+        {students.map((student) => {
+          const { location, name, githubUsername, _id } = student;
+
+          return (
+            <Student
+              githubUsername={githubUsername}
+              id={_id}
+              key={_id}
+              location={location}
+              name={name}
+            />
+          );
+        })}
+      </div>
     </main>
   );
 };

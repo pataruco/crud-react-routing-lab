@@ -16,3 +16,14 @@ img {
   height: auto;
   max-width: 100%;
 }
+
+a {
+  color: black;
+  text-decoration: none;
+  &:focus {
+    color: grey;
+  }
+  &:hover {
+    border-bottom: 1px solid;
+  }
+}
