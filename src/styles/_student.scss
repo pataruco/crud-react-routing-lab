@@ -1,0 +1,56 @@
+.students {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.student {
+  border: 1px solid;
+  padding: 1.25rem;
+  flex-basis: calc(25% - 1.25rem);
+  max-width: 25%;
+  margin-bottom: 1.25rem;
+  position: relative;
+  h3 {
+    margin-top: 0;
+  }
+
+  .show {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+  }
+
+  .edit {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+  }
+
+  dt {
+    font-size: 1.15rem;
+    font-weight: bold;
+  }
+
+  dd {
+    a {
+      color: black;
+      text-decoration: none;
+      &:hover {
+        border-bottom: 1px solid;
+      }
+
+      &:focus {
+        color: grey;
+      }
+    }
+  }
+}
+
+.show {
+  .student {
+    .show {
+      display: none;
+    }
+  }
+}

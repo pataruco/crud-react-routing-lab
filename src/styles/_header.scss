@@ -1,0 +1,31 @@
+header {
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1.25rem;
+  align-items: center;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+
+    li {
+      padding: 0 1.25rem;
+    }
+
+    a {
+      color: white;
+      text-decoration: none;
+      &:focus {
+        color: grey;
+      }
+
+      &:hover {
+        border-bottom: 2px solid;
+      }
+    }
+  }
+}
