@@ -6,7 +6,8 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 // pages
 import Home from './pages/home';
 import Error from './pages/error';
-import ListStudents from './pages/list-students';
+import ListStudents from './pages/student/list';
+import ShowStudent from './pages/student/show';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Header />
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route path="/students/:id" component={ShowStudent} />
           <Route path="/students" component={ListStudents} />
           <Route path="/*" component={Error} />
         </Switch>

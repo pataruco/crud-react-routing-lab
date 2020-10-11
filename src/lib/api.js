@@ -6,3 +6,8 @@ export const getAllStudents = async () => {
   const response = await fetch(`${URL}/students`);
   return response.json();
 };
+
+export const getStudentBy = async (id) => {
+  const response = await fetch(`${URL}/students/${id}`);
+  return response.json();
+};
