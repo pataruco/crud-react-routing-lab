@@ -11,3 +11,18 @@ export const getStudentBy = async (id) => {
   const response = await fetch(`${URL}/students/${id}`);
   return response.json();
 };
+
+export const createStudent = async ({ name, location, githubUsername }) => {
+  const response = await fetch(`${URL}/students`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      name,
+      location,
+      githubUsername,
+    }),
+  });
+  return response.json();
+};
