@@ -7,14 +7,14 @@ const ShowStudent = () => {
   const { id } = useParams();
   const [student, setStudent] = useState({});
 
-  const fetchStudent = async () => {
+  const fetchStudent = async (id) => {
     const studentData = await getStudentBy(id);
     setStudent(studentData);
   };
 
   useEffect(() => {
-    fetchStudent();
-  });
+    fetchStudent(id);
+  }, [id]);
 
   const { location, name, githubUsername, _id } = student;
 
@@ -26,6 +26,7 @@ const ShowStudent = () => {
         key={_id}
         location={location}
         name={name}
+        view={'show'}
       />
     </main>
   );

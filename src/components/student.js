@@ -3,16 +3,36 @@ import { Link } from 'react-router-dom';
 
 const getGithubUrl = (username) => `https://github.com/${username}`;
 
-const Student = ({ location, name, githubUsername, id }) => {
+const Student = ({ location, name, githubUsername, id, view }) => {
+  const linkToShow = () => {
+    let link;
+    switch (view) {
+      case 'list':
+        link = (
+          <Link to={`/students/${id}`} className="show">
+            show
+          </Link>
+        );
+        break;
+      case 'show':
+        link = (
+          <Link to={`/students/${id}/edit`} className="edit">
+            edit
+          </Link>
+        );
+        break;
+
+      default:
+        link = <></>;
+        break;
+    }
+    return link;
+  };
+
   return (
-    <article key={id} className="student">
+    <article className="student">
       <h3>{name}</h3>
-      <Link to={`/students/${id}`} key={id} className="show">
-        show
-      </Link>
-      <Link to={`/students/${id}/edit`} key={id} className="edit">
-        edit
-      </Link>
+      {linkToShow()}
       <dl>
         <dt>Location:</dt>
         <dd>{location}</dd>

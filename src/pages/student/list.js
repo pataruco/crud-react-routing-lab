@@ -12,7 +12,7 @@ const ListStudents = () => {
 
   useEffect(() => {
     fetchAllStudents();
-  });
+  }, []);
 
   return (
     <main className="page all-students">
@@ -28,6 +28,7 @@ const ListStudents = () => {
               key={_id}
               location={location}
               name={name}
+              view={'list'}
             />
           );
         })}
